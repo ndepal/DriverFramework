@@ -70,6 +70,9 @@ public:
 	static int readReg(DevHandle &h, uint8_t address, uint8_t *out_buffer, int length);
 	static int writeReg(DevHandle &h, uint8_t address, uint8_t *in_buffer, int length);
 
+	// read from a register without ioctl
+	int simple_read(uint8_t *out_buffer, int length);
+
 protected:
 	int devOpen(int flags)
 	{
